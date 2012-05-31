@@ -1,0 +1,399 @@
+﻿@namespace url(http://www.w3.org/1999/xhtml);
+
+/* Last modified: 2012-05-31T02:41:27 UTC-04:00
+ * DocumentName: PMoNYPMBlue.UserStyle.css
+ * DocumentType: text/css
+ * DirectPurpose: restyle the presentational characteristic (for
+ * screen media) of documents viewed in Firefox (and related
+ * browsers) under URI www.perlmonks.org/
+ * AuthorAndCopyrightHolder: Sören Andersen [Intrepid]
+ * Email: <somian08@gmail.com>
+ * HomePage: https://github.com/somian/FFx-userstyles (GitHub repository)
+ * SrcKitArchive: https://github.com/somian/FFx-userstyles/zipball/master
+ * LicenseAndWarrantyDisclaimer: see bottom of document.
+ *   Uploaded to GitHub on 2012-05-31 EDT
+ */
+
+@-moz-document url-prefix("http://www.perlmonks.org/") {
+
+
+
+/*  $Author$
+    $Revision$
+    Last CVS commit $Date$
+*/
+
+body, td  { color : #ffffff; background-color : #00002a; /* #24233B */ }
+body      { margin : 2px ; margin-right : 0px; }
+
+th        { color : #E2BFC1; background-color : #261A61}
+
+td , span.msg , span.odd-row , span.even-row , span.update-time
+  span.other-users-text , span.other-users-blurb
+          { font-family : verdana, avantgarde, "avant-garde", sans-serif; }
+
+span.other-users-text,span.other-users-blurb,span.update-time,
+span.other-users-blurb + *
+          {   font-size : 11pt; }
+td , span.odd-row , span.even-row  {   font-size : 9pt;  }
+
+/* Site page top */
+
+/* Perlmonks Titlebar */
+.titlebar input[type="submit"]  {
+    background-color :    #1E1D30;
+    border : 0.2ex outset #1E1D30;
+    border-left : 0.2ex outset #4B4962;
+    border-top :  0.2ex outset #4B4962;
+    padding :     0.4ex;
+    font :  10pt arial,helvetical,sans-serif;
+}
+.titlebar input[type="text"]    {
+    vertical-align : middle;
+    color : inherit;
+}
+
+tr.titlebar , tr.monkquip {
+    color :            #E2BFC1;
+    background-color : #1E1D30;
+}
+
+td.monkquip font  {
+    font-family : "zapf chancery", cursive;
+    font-size   : 12pt;
+}
+
+/* table#titlebar { background-color : #433559; } */
+table td.titlebar {
+    background-color : #403257;
+}
+
+#monkbar {
+    border : outset 4px ; border-collapse : collapse;
+    border-color : #433559;
+}
+
+#monkbar tr.titlebar {
+    border : 4px inset #433559;
+    margin-top : -12px;
+
+}
+#monkbar tr, #monkbar td {
+    font : 18pt verdana,sans-serif;
+    vertical-align : middle;
+}
+
+#monkbar tr, #monkbar td.titlebar {
+    padding-right  : 1.5ex;
+}
+
+table#titlebar {
+    font-family : verdana, "avant-garde", sans-serif;
+    background-color : #1E1D30;
+    margin-right : 0;
+}
+#titlebar tbody td.monktitlebar, td.titlechooser {
+ /* tr.section_title , td.section_title */
+    padding : 6 10;
+    color :            #E2BFC1;
+    background-color : #1E1D30;
+}
+
+#titlebar a:link    , .nodelet a:link     {color :#00AAFF}
+#titlebar a:visited , .nodelet a:visited  {color :#3D78B4}
+
+
+/* Main article text */
+div.doctext {
+           font-family:
+             "Minion Web Pro", "Minion Pro", "Minion", serif !important;
+           font-size  : 14pt !important;
+}
+div.doctext > p  { font-family : inherit; }
+
+
+/* From node "Line Numbering in Code Listings" [942840] [Xiong] */
+.codeblock {
+    margin-left:        1em;
+    background-color:   inherit;
+}
+.line-number {
+    color:              #779;
+    background-color:   #fdd;
+}
+
+
+
+/* MonkMsg display settings */
+span.msg  {   font-size : 12px; color : #698B69; }
+
+span.msg * tt , span.msg * .code
+          {   font-size : 15px !Important;
+              color : #9BCD9B;
+              font-family : dina, "dejavu lgc sans mono", monospace;
+              font-weight : 200;
+}
+
+span.msg> * >i
+          {
+              color  : #8B864E ;
+}
+
+center table
+          { margin-right : 0;  padding-right : 0;  }
+
+a         { color :#FFF;    text-decoration : none;}
+a:link    { color :#CA8AFA}
+a:visited { color :#A4EE9C} /* #A4EE9C or #AB684C */
+a:hover   { color :#FBE604; text-decoration : underline;}
+a:active  { color :#FBB30C}
+
+p.code {
+            background-color : #020202;
+            padding : 1.3ex;
+            border  : 1px solid #565656;
+            font-weight :  200;
+	    font-family: "dejavu lgc sans mono",
+	          "dejavu sans mono",
+		  "bitstream vera sans mono",
+		  "dec terminal",  monospace;
+       }
+
+/*
+tt.code fonts you might want to use:
+   font : 19px    "dejavu lgc sans mono";
+   font :  9pt    "bitstream vera sans mono"
+   font : 11pt    "dec terminal"
+*/
+tt.code , tt.codetext
+       {
+	    color : #bababa ;
+	    font-family: "dejavu lgc sans mono",
+	          "dejavu sans mono",
+		  "bitstream vera sans mono",
+		  "dec terminal",  monospace;
+       }
+
+
+tr.post_head td {
+            font-size   : 13pt;
+        font-family : "bitstream vera serif",serif;
+}
+tr.post_body td {
+            font-size   : 11pt;
+        font-family : "bitstream vera sans", sans-serif;
+}
+
+/* Nodelets */
+table.nodelet_container {
+    background-color : #433559;
+    font-family : arial,helvetica,sans-serif;
+}
+
+tbody.nodelet td, td.nodebody {
+    font-family : arial,helvetica,sans-serif;
+    background-color : #1E1D30;
+   /* font-size : 11pt; */
+}
+
+tbody.nodelet th, th.nodehead {
+    font-family : arial,helvetica,sans-serif;
+    color :            #E2BFC1;
+    background-color : #7F7BD0;
+}
+
+
+/* GUI form elements */
+textarea {
+           width : 100%; height : 395px;
+           padding-left :    0.4ex;
+           padding-bottom :  3px;
+           color :            #FFFDFD;
+           background-color : #260B22;
+           font-size : small;  /* works well for Firefox on mmbd at default zoom */
+     }
+
+/* ordinary "submit" buttons */
+input[type="submit"] {
+   background-color : #060628;
+              color : #C90090;
+}
+input[type="radio"]  {
+   background-color : #312139;
+   color : inherit;
+}
+input[type="checkbox"]  {
+   background-color : #312139;
+   color : inherit;
+}
+select  {
+   background-color : #312139;
+   color : inherit;
+}
+
+/* User Settings nodes */
+ table.user-settings, table.user-settings td
+ {
+     background-color : rgb(0,0,86);
+                width : 100%;
+     border-color : #01013B;  border-width : 1px;
+        border-top-width : 2px;
+     border-bottom-width : 2px;
+ }
+ table.user-settings textarea[name="setfreenodelet"],
+ table.user-settings textarea[name="setstyle"],
+ table.user-settings textarea
+ {
+     background-color : #570A15;
+                width : 80%;
+         margin-right : 2em;
+ }
+ table.user-settings input[type="text"]
+ { /* name="setcss_link" size="50" type="text" */
+     background-color : #000F2D;
+                color : #BDBDBD;
+            min-width : 16%;
+ }
+ 
+ table.user-settings input[type="checkbox"]
+ {   background-color : #570A15 !important;
+                color : #BDBDBD !important;
+ }
+
+ table#u-s-code tbody tr th  /*  colspan="2"  */
+ {
+     max-width : 38%;
+ }
+ table#u-s-code tbody tr td  /*  colspan= ??  */
+ {
+     min-width  : 30%;
+  padding-right : 4em;
+ }
+ table#u-s-code input[type="checkbox"],
+ table#u-s-code label input[type="checkbox"]
+ {   background-color : #570A15 !important;
+                color : #BDBDBD !important;
+ }
+ table#u-s-code input[type="text"]
+ {   background-color : #570A15 !important;
+                color : #BDBDBD !important;
+            min-width : 16ex;
+                width : 22ex    !important;
+ }
+
+
+
+/* Chatterbox nodelet */
+tbody#Chatterbox table.cb_table , tbody#Chatterbox table.cb_table > * {
+    background-color : #183024 !Important;
+            border   : thin solid #F66D0E !Important;
+}
+
+tbody#Chatterbox table.cb_table span.chat {
+    font-family : avantgarde, "avant garde", verdana, sans-serif;
+      font-size : 10pt;
+}
+
+tbody#Chatterbox table.cb_table span.chat tt { color : #00FF7E; }
+
+tbody#Chatterbox table.cb_table span.chat code ,
+tbody#Chatterbox table.cb_table span.chat .code
+     {
+          color : #00CED1;  /* dark turquoise */
+}
+
+tbody#Chatterbox input#talkbox ,
+tbody#Chatterbox input[name="message"]
+     {
+         padding-top : 2px;
+               color : #E9ED66;
+    background-color : #311C33;
+         font-family : inconsolata,ProggyCleanTTSZ,monospace;
+           font-size : 15px;
+          margin-top : 1ex;
+      vertical-align : top;
+          min-width  : 86%;
+}
+
+tbody#Chatterbox input[name="message_send"][type="submit"]
+     {
+         padding : 1px;
+      margin-top : 1ex;
+       font-size : 12px;
+  vertical-align : center;
+}
+/* END Chatterbox nodelet */
+
+/* For the "chatterbox sidebar" */
+   /* id-481185 is the bottommost frame that holds the input field */
+body#id-481185 { background-color : #1E1D30; }
+body#id-481185 { padding-top: 0px; padding-bottom: 0px; margin-top: 4px; margin-bottom: 0px; }
+
+body#id-481185 form { margin : 1px 3px; }
+
+body#id-481185 form input#talkbox
+  {
+         width : 97% !important;
+   font-family :
+          "inconsolata medium",
+                 "ubuntu mono",
+               "anonymous pro",
+             "proggycleanTTSZ",
+            "dejavu sans mono", monospace;
+     font-size     : 11pt;
+   padding-bottom  : 4px;
+     padding-left  : 1px;
+    padding-right  : 2px;
+   border-width    : 1px;
+   border-color    : black;
+         height    : 1.8em;
+  background-color : #351E37;
+             color : #ACCF8E;
+  }
+
+
+body#id-481185 input[name="message_send"]  { display: none }
+
+   /* id-481181 is the topmost frame that holds the CeeBee and monkmsg messages */
+body#id-481181 {background-color :#1E1D30; margin :5px 0 0 5px; font-size :12px;}
+body#id-481181 table.cb_table    { background-color :#00002A; }
+body#id-481181 table.cb_table td { // font-stretch : wider;
+                                   line-height  : 17px; }
+body#id-481181 table.cb_table,
+body#id-481181 td span.chat    {font-size :13px !Important;}
+
+body#id-481181    span.msg     {font-size :12px !Important;}
+body#id-481181 span.cb_author  {font-size :13px !Important;}
+body#id-481181 span.cb_author a:link ,
+body#id-481181 span.cb_author a:visited
+   { color : #ffdd00; }
+body#id-481181 span.chat tt
+   { color : #00FF7E;
+     font-family : inconsolata,"ubuntu mono",monaco !Important;
+     font-size : 13px !Important;
+}
+body#id-481181 span.chat  code ,
+body#id-481181 span.chat .code 
+   { color : cyan;
+     font-family : inconsolata,monaco,monospace !Important;
+     font-size : 13px !Important;
+}
+
+}  /* closing brace for moz wrapper */
+
+/*
+ License: this code may be used only under the terms of the null-warranty
+   expressed below, and it may be copied and modified and redistributed only
+   under the terms of the Artistic License or the Gnu Public
+   License (v.3 or better), as per the user's choice.
+
+    THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+    APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE
+    COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS”
+    WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+    INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE
+    RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.
+    SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
+    NECESSARY SERVICING, REPAIR OR CORRECTION.
+ */
