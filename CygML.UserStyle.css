@@ -1,0 +1,178 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+/* First created: 2012-05-29 UTC-04:00
+ * Last modified: 2012-05-31T00:24:24 UTC-04:00
+ * DocumentName: CygML.UserStyle.css
+ * DocumentType: text/css
+ * DirectPurpose: restyle the presentational characteristic (for
+ * screen media) of documents viewed in Firefox (and related
+ * browsers) under URI www.cygwin.com/ml/
+ * AuthorAndCopyrightHolder: Sören Andersen
+ * Email: <somian08@gmail.com>
+ * HomePage: https://github.com/somian/FFx-userstyles (GitHub repository)
+ * SrcKitArchive: https://github.com/somian/FFx-userstyles/zipball/master
+ * LicenseAndWarrantyDisclaimer: see bottom of document.
+ */
+
+@-moz-document url-prefix("http://cygwin.com/ml/") {
+
+  body
+    {            margin-top : 0px !important;
+              margin-bottom : 0px !important;
+                      color : #C0C0C0;
+           background-color : #000 !important;
+    }
+  p tt
+    {
+       font-family  : "dejavu sans mono", monospace  !important;
+    }
+  body p:first-of-type + hr
+    {
+        display : none;
+    }
+
+  body hr
+    {
+        background-color : #000 !important;
+                   color : #A35 !important;
+      margin : 1px 0px 1px -1em !important;
+              padding : 0px 0px !important;
+    }
+
+  body p:first-of-type
+    {
+                  color : #D649B1  !important;
+       background-color : #000     !important;
+              font-size : large    !important;
+            text-shadow : 0 0 0.2em #41F,
+                          0 0 0.2em #10A,
+                          0 0 0.2em #41F ;
+
+                 margin : 0px      !important;
+            margin-left : -2ex     !important;
+
+           padding-left :   20%    !important;
+           padding-top  :   2px    !important;
+           padding-bottom : 2px    !important;
+    }
+  body p:first-of-type a:link,
+  body p:first-of-type a:visited
+    {
+        color   : #AF6900 !important;
+    }
+
+  body p a:link,
+  body p a:visited,
+  h1 + ul a:link,
+  body ul:last-of-type a:link
+    {
+        color   : #305 !important;
+    }
+
+  h1 + ul > li a
+    {
+        font-family : monospace;
+    }
+  h1 + ul,
+  body ul:last-of-type
+    {
+                   color : #000 !important;
+        background-color : #B0A985 !important;
+           margin-left : -3ex !important;
+    }
+
+  body ul:last-of-type
+    {
+               clear : left !important;
+       margin-bottom : 2ex !important;
+    }
+
+  h1 + ul > li:last-child *
+    {
+        font-weight : 800 !important;
+    }
+
+
+  h1{
+        font-size  :  16pt  !important;
+       padding-bottom : 0px !important;
+        margin-bottom : 0px !important;
+    }
+
+ /* Cygwin List Boilerplate */
+
+  h1 + ul + hr + pre a:link,
+  ul + hr ~ tt a:link,
+  ul + hr ~ tt + p >strong>a:link
+    {
+                color : #2E8B57 !important;
+      text-decoration : none    !important;
+    }
+  h1 + ul + hr + pre a:visited,
+  ul + hr ~ tt a:visited,
+  ul + hr ~ tt + p >strong>a:visited
+
+    {
+                color : #707000 !important;
+      text-decoration : none    !important;
+    }
+  h1 + ul + hr + pre,  /* the main email message text */
+  ul + hr ~ tt  /* ~ is "general sibling combinator" */
+    {
+        margin-left  : 6ex       !important;
+         white-space : pre-wrap  !important;
+               color : #556B2F   !important;
+    background-color : #000      !important;
+    }
+
+  h1 + ul + hr + pre a:nth-last-child(-n+4),
+  ul + hr ~ pre a:link,
+  ul + hr ~ pre a:visited
+    {
+        text-decoration : underline !important;
+                  color : #252B2C   !important;
+    }
+    
+ /* headers and footers */
+  body table:first-of-type a:link,
+  body table:last-of-type a:link,
+  body table:first-of-type a:visited,
+  body table:last-of-type a:link
+    {
+               color  : #708090  !important;
+      text-decoration : none     !important;
+            font-size : larger   !important;
+    }
+
+
+/* Shrink font face of email meta-data display and change styling of
+   thread navigation links-text. */
+  body table:first-of-type,
+  body table:last-of-type
+    {
+        font-size : x-small !important;
+      background-color : #334  !important;
+                 color : #A97  !important;
+
+           margin-left : -1em !important;
+               padding : 4px 6px 2px 6px !important;
+                 float : right !important;
+    }
+}
+
+/* License: this code may be used only under the terms of warranty
+ * expressed below.
+ * The code may be copied and modified and redistributed only
+ * under the terms of the Artistic License or the Gnu Public
+ * License (v.3 or better), as per the user's choice.
+
+    THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+    APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE
+    COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS”
+    WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+    INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE
+    RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.
+    SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
+    NECESSARY SERVICING, REPAIR OR CORRECTION.
+ */
