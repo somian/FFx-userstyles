@@ -16,7 +16,8 @@
 
 @-moz-document url-prefix("http://www.perlmonks.org/") {
 
-
+/* Perlmonks "Dark Theme" imported: */
+@import url("http://www.perlmonks.org/?node_id=22761") screen;
 
 /*  $Author$
     $Revision$
@@ -94,7 +95,7 @@ table#titlebar {
 }
 #titlebar tbody td.monktitlebar, td.titlechooser {
  /* tr.section_title , td.section_title */
-    padding : 6 10;
+    padding : 6px 10px;
     color :            #E2BFC1;
     background-color : #1E1D30;
 }
@@ -320,7 +321,7 @@ tbody#Chatterbox input[name="message_send"][type="submit"]
          padding : 1px;
       margin-top : 1ex;
        font-size : 12px;
-  vertical-align : center;
+  vertical-align : middle;
 }
 /* END Chatterbox nodelet */
 
