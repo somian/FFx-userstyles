@@ -3,11 +3,10 @@ FFx-userstyles
 
 Collection of CSS sheets employed w/ Stylish to craft improved presentational attributes for various sites
 
-License: this code may be used only under the terms of warranty
- expressed below.
- The code may be copied and modified and redistributed only
- under the terms of the Artistic License or the Gnu Public
- License (v.3 or better), as per the user's choice.
+License: this code may be used only under the terms of the null-warranty
+  expressed below, and it may be copied and modified and redistributed only
+  under the terms of the Artistic License or the Gnu Public
+  License (v.3 or better), as per the user's choice.
 
     THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
     APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE
