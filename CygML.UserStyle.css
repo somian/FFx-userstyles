@@ -1,9 +1,10 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 
 /* First created: 2012-05-29 UTC-04:00
- * Last modified: 2012-05-31T00:43:59 UTC-04:00
+ * Last modified: 2012-06-05T14:21:49 UTC-04:00
  * DocumentName: CygML.UserStyle.css
  * DocumentType: text/css
+ * StylishName: "Cygwin Mailing List Restyle"
  * DirectPurpose: restyle the presentational characteristic (for
  * screen media) of documents viewed in Firefox (and related
  * browsers) under URI www.cygwin.com/ml/
@@ -19,8 +20,8 @@
   body
     {            margin-top : 0px !important;
               margin-bottom : 0px !important;
-                      color : #C0C0C0;
-           background-color : #000 !important;
+                      color : #C0C0C0  !important;
+           background-color : #000     !important;
     }
   p tt
     {
@@ -163,7 +164,7 @@
 /* 
  License: this code may be used only under the terms of the null-warranty
   expressed below, and it may be copied and modified and redistributed only
-  under the terms of the Artistic License or the Gnu Public
+  under the terms of the Artistic License or the Gnu General Public (GPL)
   License (v.3 or better), as per the user's choice.
 
     THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
