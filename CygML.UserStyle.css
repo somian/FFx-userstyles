@@ -1,7 +1,7 @@
-@namespace url(http://www.w3.org/1999/xhtml);
+namespace url(http://www.w3.org/1999/xhtml);
 
 /* First created: 2012-05-29 UTC-04:00
- * Last modified: 2012-06-05T14:21:49 UTC-04:00
+ * Last modified: 2012-06-06T17:07:18 UTC-04:00
  * DocumentName: CygML.UserStyle.css
  * DocumentType: text/css
  * StylishName: "Cygwin Mailing List Restyle"
@@ -15,13 +15,18 @@
  * LicenseAndWarrantyDisclaimer: see bottom of document.
  */
 
-@-moz-document url-prefix("http://cygwin.com/ml/") {
+@namespace url(http://www.w3.org/1999/xhtml);
 
+@-moz-document url-prefix("http://cygwin.com/ml/"),
+               url-prefix("http://www.cygwin.com/ml/"),
+               url-prefix("http://sourceware.org/ml/"),
+               url-prefix("http://www.sourceware.org/ml/")
+{
   body
     {            margin-top : 0px !important;
               margin-bottom : 0px !important;
-                      color : #C0C0C0  !important;
-           background-color : #000     !important;
+                      color : #C0C0C0;
+           background-color : #000 !important;
     }
   p tt
     {
@@ -42,12 +47,12 @@
 
   body p:first-of-type
     {
-                  color : #D649B1  !important;
+                  color : rgb(228,154,94)  !important;
        background-color : #000     !important;
               font-size : large    !important;
             text-shadow : 0 0 0.2em #41F,
-                          0 0 0.2em #10A,
-                          0 0 0.2em #41F ;
+                          0 0 0.4em #10A,
+                          0 0 0.6em #FF0 ;
 
                  margin : 0px      !important;
             margin-left : -2ex     !important;
@@ -65,20 +70,49 @@
   body p a:link,
   body p a:visited,
   h1 + ul a:link,
+  h1 + ul a:visited,
   body ul:last-of-type a:link
     {
-        color   : #305 !important;
+        color   : rgb(176,156,98) !important;
     }
+
+  h1 + ul a:link:active,
+  body ul:last-of-type a:link:active,
+  h1 + ul a:link:hover,
+  body ul:last-of-type a:link:hover
+    {
+        color   : rgb(200,188,68) !important;
+    }
+  body ul:last-of-type a:link
+    {
+        color   : rgb(246,156,98) !important;
+    }
+  body ul:last-of-type a:link:after
+    {
+        content : " *" !important;
+    }   
+  body ul:last-of-type a:visited
+    {
+        color   : rgb(176,156,98)  !important;
+    }
+
+  body ul:last-of-type a:visited:after
+    {
+        content : "" !important;
+    }
+
 
   h1 + ul > li a
     {
-        font-family : monospace;
+        font-family : monospace !important;
     }
+
+ /* headers and footers */
   h1 + ul,
   body ul:last-of-type
     {
-                   color : #000 !important;
-        background-color : #B0A985 !important;
+                   color : #FFF !important;
+        background-color : rgb(14,46,26) !important; /* rgb(176, 169, 133) */
            margin-left : -3ex !important;
     }
 
@@ -87,7 +121,10 @@
                clear : left !important;
        margin-bottom : 2ex !important;
     }
-
+  body ul:last-of-type a
+    {
+        text-decoration : none !important;
+    }
   h1 + ul > li:last-child *
     {
         font-weight : 800 !important;
@@ -101,7 +138,6 @@
     }
 
  /* Cygwin List Boilerplate */
-
   h1 + ul + hr + pre a:link,
   ul + hr ~ tt a:link,
   ul + hr ~ tt + p >strong>a:link
@@ -118,11 +154,11 @@
       text-decoration : none    !important;
     }
   h1 + ul + hr + pre,  /* the main email message text */
-  ul + hr ~ tt  /* ~ is "general sibling combinator" */
+  ul + hr ~ tt                           /* ~ is "the general sibling combinator" */
     {
         margin-left  : 6ex       !important;
          white-space : pre-wrap  !important;
-               color : #556B2F   !important;
+               color : rgb(133,169,73)   !important;  /* too dim: #556B2F */
     background-color : #000      !important;
     }
 
@@ -133,39 +169,43 @@
         text-decoration : underline !important;
                   color : #252B2C   !important;
     }
-    
- /* headers and footers */
-  body table:first-of-type a:link,
-  body table:last-of-type a:link,
-  body table:first-of-type a:visited,
-  body table:last-of-type a:link
-    {
-               color  : #708090  !important;
-      text-decoration : none     !important;
-            font-size : larger   !important;
-    }
-
 
 /* Shrink font face of email meta-data display and change styling of
    thread navigation links-text. */
   body table:first-of-type,
   body table:last-of-type
     {
-        font-size : x-small !important;
+             font-size : small !important;
       background-color : #334  !important;
                  color : #A97  !important;
 
            margin-left : -1em !important;
                padding : 4px 6px 2px 6px !important;
-                 float : right !important;
     }
-}
 
-/* 
- License: this code may be used only under the terms of the null-warranty
+  body table:first-of-type
+    {
+              position : absolute !important; top: -0.4em !important; right : 0.85em !important;
+    }
+  body table:last-of-type
+    {
+              position : relative !important; top : -5.25em !important; left : 60% !important;
+    }
+  body table:first-of-type   a:link,
+  body table:last-of-type    a:link,
+  body table:first-of-type  a:visited,
+  body table:last-of-type   a:visited
+    {
+                 color : rgb(228,154,94)  !important;
+       text-decoration : none     !important;
+    }
+
+}
+/*
+License: this code may be used only under the terms of the null-warranty
   expressed below, and it may be copied and modified and redistributed only
-  under the terms of the Artistic License or the Gnu General Public (GPL)
-  License (v.3 or better), as per the user's choice.
+  under the terms of the Artistic License or the Gnu General Public License
+  (GPL v.3 or better), as per your choice.
 
     THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
     APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE
