@@ -1,7 +1,7 @@
-namespace url(http://www.w3.org/1999/xhtml);
+@namespace url(http://www.w3.org/1999/xhtml);
 
 /* First created: 2012-05-29 UTC-04:00
- * Last modified: 2012-06-12T20:32:57 UTC-04:00
+ * Last modified: 2012-06-13T13:04:13 UTC-04:00
  * DocumentName: CygML.UserStyle.css
  * DocumentType: text/css
  * StylishName: "Cygwin Mailing List Restyle"
@@ -15,26 +15,21 @@ namespace url(http://www.w3.org/1999/xhtml);
  * LicenseAndWarrantyDisclaimer: see bottom of document.
  */
 
-@namespace url(http://www.w3.org/1999/xhtml);
-
 @-moz-document url-prefix("http://cygwin.com/ml/"),
                url-prefix("http://www.cygwin.com/ml/"),
                url-prefix("http://sourceware.org/ml/"),
                url-prefix("http://www.sourceware.org/ml/")
 {
   body
-    {            margin-top : 0px !important;
-              margin-bottom : 0px !important;
-                      color : #C0C0C0;
-           background-color : #000 !important;
+    {            margin-top : 0px      !important;
+              margin-bottom : 0px      !important;
+                      color : #C0C0C0  !important;
+           background-color : #000     !important;
+                    z-index : 0;
     }
   p tt
     {
        font-family  : "dejavu sans mono", monospace  !important;
-    }
-  body p:first-of-type + hr
-    {
-        display : none;
     }
 
   body hr
@@ -45,10 +40,18 @@ namespace url(http://www.w3.org/1999/xhtml);
               padding : 0px 0px !important;
     }
 
+
+  body p:first-of-type + hr
+    {
+        display : none !important;
+    }
+
+/* Top of Web-page ID paragraph ("cygwin@cygwin.com") */
   body p:first-of-type
     {
                   color : rgb(228,154,94)  !important;
        background-color : #000     !important;
+                z-index : 4        !important;
               font-size : large    !important;
             text-shadow : 0 0 0.2em #41F,
                           0 0 0.4em #10A,
@@ -56,10 +59,11 @@ namespace url(http://www.w3.org/1999/xhtml);
 
                  margin : 0px      !important;
             margin-left : -2ex     !important;
+        margin-bottom   : 0.3ex    !important;
 
            padding-left :   20%    !important;
            padding-top  :   2px    !important;
-           padding-bottom : 2px    !important;
+         padding-bottom : 2px    !important;
     }
   body p:first-of-type a:link,
   body p:first-of-type a:visited
@@ -87,18 +91,23 @@ namespace url(http://www.w3.org/1999/xhtml);
     {
         color   : rgb(246,156,98) !important;
     }
-  body ul:last-of-type a:link:after
-    {
-        content : " *" !important;
-    }   
+
   body ul:last-of-type a:visited
     {
         color   : rgb(176,156,98)  !important;
     }
 
-  body ul:last-of-type a:visited:after
+
+  body > ul:last-of-type a:link:after
     {
-        content : "" !important;
+        content : " ×" !important;
+        color   : rgb(176,254,98)  !important;
+    }
+  body ul:last-of-type a:visited:after,  /* not working in FFx on M$Wind*ws currently */
+  body ul:last-of-type a:visited:hover:after
+    {
+        content : " ✓" !important;
+        color   : rgb(176,254,98)  !important;
     }
 
 
@@ -108,36 +117,64 @@ namespace url(http://www.w3.org/1999/xhtml);
     }
 
  /* headers and footers */
-  h1 + ul,
+  body > h1 + ul,
   body ul:last-of-type
     {
                    color : #FFF !important;
-        background-color : rgb(14,46,26) !important; /* rgb(176, 169, 133) */
-           margin-left : -3ex !important;
+        background-color : rgba(10,0,10,20) !important; /* rgb(14,46,26) !important; /* rgb(176, 169, 133) */
+             margin-left : -3.5ex !important;
+
     }
 
+  body > h1 + ul
+    {
+             font-family : "Adobe Minion Web",
+                           "Minion Web",
+                           "DejaVu Sans Condensed",
+                           Ubuntu,
+                           Calibri,
+                           sans-serif;
+               min-width : 95%   !important;
+             font-size   : 8pt   !important;
+                   color : #FFF  !important;
+                 display : inline-block !important;
+                 z-index : -1 !important;
+    }
   body ul:last-of-type
     {
                clear : left !important;
-       margin-bottom : 2ex !important;
+       margin-bottom : 0px !important;
+            position : relative;
+             z-index : 0 !important;
+    }
+
+  body ul:last-of-type li
+    {
+           padding : 0.2ex 0 0.1ex 0;
     }
   body ul:last-of-type a
     {
         text-decoration : none !important;
+           z-index : 3 !important;
     }
-  h1 + ul > li:last-child *
+
+       hr + ul > li > ul > li > ul > li,
+  hr + ul + ul > li > ul > li > ul > li
     {
-        font-weight : 800 !important;
+        list-style-type : none  !important;
     }
 
 
-  h1{
-        font-size  :  16pt  !important;
+/* Main Subject / Topic Header */
+  body > h1
+    {
+           font-size  :  18pt  !important;
        padding-bottom : 0px !important;
         margin-bottom : 0px !important;
+              z-index : 8   !important;
     }
 
- /* Cygwin List Boilerplate */
+ /* Cygwin List Boilerplate (inserted in list submissions) */
   h1 + ul + hr + pre a:link,
   ul + hr ~ tt a:link,
   ul + hr ~ tt + p >strong>a:link
@@ -154,7 +191,7 @@ namespace url(http://www.w3.org/1999/xhtml);
       text-decoration : none    !important;
     }
   h1 + ul + hr + pre,  /* the main email message text */
-  ul + hr ~ tt                           /* ~ is "the general sibling combinator" */
+  ul + hr ~ tt         /* ~ is "the general sibling combinator" (CSS-3) */
     {
         margin-left  : 6ex       !important;
          white-space : pre-wrap  !important;
@@ -176,20 +213,21 @@ namespace url(http://www.w3.org/1999/xhtml);
   body table:last-of-type
     {
              font-size : small !important;
-      background-color : #334  !important;
+      background-color : rgba(48,48,98,90) !important;
                  color : #A97  !important;
-
-           margin-left : -1em !important;
-               padding : 4px 6px 2px 6px !important;
     }
 
   body table:first-of-type
     {
-              position : absolute !important; top: -0.4em !important; right : 0.85em !important;
+              position : relative !important; top: 60pt !important; /*  right : 2% !important; */
+                float  : right;
+               z-index : 90;
     }
   body table:last-of-type
     {
-              position : relative !important; top : -5.25em !important; left : 60% !important;
+              position : relative !important; left : 56% !important; bottom : 4.0em ;
+               z-index : 1;
+         margin-bottom : -8.5em !important;
     }
   body table:first-of-type   a:link,
   body table:last-of-type    a:link,
@@ -198,6 +236,7 @@ namespace url(http://www.w3.org/1999/xhtml);
     {
                  color : rgb(228,154,94)  !important;
        text-decoration : none     !important;
+               z-index : 4 !important;
     }
 
 }
