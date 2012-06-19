@@ -1,7 +1,7 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 
 /* First created: 2012-05-29 UTC-04:00
- * Last modified: 2012-06-13T13:04:13 UTC-04:00
+ * Last modified: 2012-06-19T02:17:13 UTC-04:00
  * DocumentName: CygML.UserStyle.css
  * DocumentType: text/css
  * StylishName: "Cygwin Mailing List Restyle"
@@ -38,6 +38,7 @@
                    color : #A35 !important;
       margin : 1px 0px 1px -1em !important;
               padding : 0px 0px !important;
+              opacity : 0.45;
     }
 
 
@@ -83,7 +84,7 @@
   h1 + ul a:link:active,
   body ul:last-of-type a:link:active,
   h1 + ul a:link:hover,
-  body ul:last-of-type a:link:hover
+  body > ul:last-of-type a:link:hover
     {
         color   : rgb(200,188,68) !important;
     }
@@ -98,15 +99,14 @@
     }
 
 
-  body > ul:last-of-type a:link:after
+  body ul:last-of-type li a:link:before
     {
-        content : " ×" !important;
+        content : "× " !important;  /* "× "  */
         color   : rgb(176,254,98)  !important;
     }
-  body ul:last-of-type a:visited:after,  /* not working in FFx on M$Wind*ws currently */
-  body ul:last-of-type a:visited:hover:after
+  body ul:last-of-type li a:visited:before     /* not working in FFx on M$Wind*ws currently */
     {
-        content : " ✓" !important;
+        content : "✓ " !important;
         color   : rgb(176,254,98)  !important;
     }
 
@@ -116,12 +116,13 @@
         font-family : monospace !important;
     }
 
- /* headers and footers */
+ /* "headers" (submission meta) and "footers" (thread nav links) */
   body > h1 + ul,
   body ul:last-of-type
     {
                    color : #FFF !important;
-        background-color : rgba(10,0,10,20) !important; /* rgb(14,46,26) !important; /* rgb(176, 169, 133) */
+        background-color : rgba(10,0,10,20) !important;
+               /* rgb(14,46,26) !important; /* rgb(176, 169, 133) */
              margin-left : -3.5ex !important;
 
     }
@@ -143,14 +144,18 @@
   body ul:last-of-type
     {
                clear : left !important;
-       margin-bottom : 0px !important;
             position : relative;
              z-index : 0 !important;
+       margin-bottom : -1.0ex !important;
     }
 
-  body ul:last-of-type li
+  body ul:last-of-type li:last-of-type
     {
-           padding : 0.2ex 0 0.1ex 0;
+           padding : 0.8ex 0.2ex 0.8ex 0  !important;
+    }
+  body ul:last-of-type li:last-of-type
+    {
+           margin-bottom: -1.2ex !important;
     }
   body ul:last-of-type a
     {
@@ -195,7 +200,7 @@
     {
         margin-left  : 6ex       !important;
          white-space : pre-wrap  !important;
-               color : rgb(133,169,73)   !important;  /* too dim: #556B2F */
+               color : rgb(133,169,73)   !important;
     background-color : #000      !important;
     }
 
@@ -213,21 +218,32 @@
   body table:last-of-type
     {
              font-size : small !important;
-      background-color : rgba(48,48,98,90) !important;
+      background-color : rgb(48,48,98) !important;
                  color : #A97  !important;
+                 border: double 3px #A97  !important;
+              opacity  : 0.26;
+                filter : alpha("opacity=26");
     }
 
+  body table:first-of-type:hover,
+  body table:last-of-type:hover
+    {
+     background-color : #556B2F  !important;
+                color : #FFF     !important;
+              opacity : 0.80     !important;
+               filter : alpha("opacity=80");
+    }
   body table:first-of-type
     {
-              position : relative !important; top: 60pt !important; /*  right : 2% !important; */
-                float  : right;
-               z-index : 90;
+              position : absolute !important;  top :   20pt !important;  right : 0.2% !important;
+                float  : right !important;
+               z-index : 9;
     }
   body table:last-of-type
     {
-              position : relative !important; left : 56% !important; bottom : 4.0em ;
-               z-index : 1;
-         margin-bottom : -8.5em !important;
+              position : relative !important;  top : -3.7em !important;  right : -6.0px !important;
+                 float : right !important;
+               z-index : 9;
     }
   body table:first-of-type   a:link,
   body table:last-of-type    a:link,
@@ -235,8 +251,7 @@
   body table:last-of-type   a:visited
     {
                  color : rgb(228,154,94)  !important;
-       text-decoration : none     !important;
-               z-index : 4 !important;
+       text-decoration : none             !important;
     }
 
 }
@@ -256,3 +271,4 @@ License: this code may be used only under the terms of the null-warranty
     SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
     NECESSARY SERVICING, REPAIR OR CORRECTION.
  */
+
