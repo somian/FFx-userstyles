@@ -1,9 +1,10 @@
 ﻿@namespace url(http://www.w3.org/1999/xhtml);
 
 /*
- * Last modified: 2012-07-21T11:48:56 UTC-04:00
+ * Last modified: 2012-07-21T17:03:27 UTC-04:00
  * DocumentName: VimOrg.UserStyle.css
  * DocumentType: text/css
+ * CSSLevelReq: CSS Level 3 + (selectors, gradients)
  * StylishName: "www.vim.org with less clutter, soothing."
  * DirectPurpose: restyle the presentational characteristic (for
  * screen media) of documents viewed in Firefox (and related
@@ -15,16 +16,9 @@
  * LicenseAndWarrantyDisclaimer: see bottom of document.
  */
 
-@-moz-document url-prefix(http://www.vim.org/scripts/) {
-
-    body >table:first-child
-      {
-            display: none !Important;
-      }
-
-}
-
 @-moz-document domain("www.vim.org"),
+               domain("vim.sourceforge.net"),
+               domain("vim.sf.net"),
                url-prefix("http://www.google.com/cse?cx=partner-pub-3005259998294962%3Abvyni59kjr1")
 {
 
@@ -58,124 +52,128 @@
 	font-family: arial,helvetica,sans-serif;
      }
 
-th {
-	font-family: arial,helvetica,sans-serif;
-	font-weight: bold;
-	text-align: left;
-}
+     th
+      {
+         font-family: arial,helvetica,sans-serif;
+         font-weight: bold;
+         text-align: left;
+      }
 
-em {
-	font-weight: bold;
-	font-style: italic;
-}
+     em
+      {
+    font-weight: bold;
+    font-style: italic;
+      }
 
 .darkbg {
-	background-color: #007f00;
+    background-color: #007f00;
 }
 
 td.lightbg {
-	background-color: #000;
-        padding: 17px;
+    background-color: #000;
+    padding: 17px;
 }
 
 .sidebar {
-	font-family: arial,helvetica,sans-serif;
-	background-color: #f0f0dd;
-	font-size: small;
+    font-family: arial,helvetica,sans-serif;
+    background-color: #f0f0dd;
+    font-size: small;
 }
 
 .topheader {
-	font-family: arial,helvetica,sans-serif;
-	font-size: large;
-	font-weight: bold;
-	background-color: #cccc99;
+    font-family: arial,helvetica,sans-serif;
+    font-size: large;
+    font-weight: bold;
+    background-color: #cccc99;
 }
 
-table[width="180"][cellspacing="0"][cellpadding="0"]
- {
-     width : 40px !Important;
+   table[width="180"][cellspacing="0"][cellpadding="0"]
+     {
+         width : 40px !Important;
      max-width :  134px !Important;
-     border : thin dotted #ccffcc !Important;
- }
+        border : thin dotted #ccffcc !Important;
+     }
 
-table[width="172"][cellspacing="0"][cellpadding="0"][border="0"]
- {
-      display: none !Important;
- }
+   table[width="172"][cellspacing="0"][cellpadding="0"][border="0"]
+     {
+         display: none !Important;
+     }
 
-.newsdate {
-	font-style: italic;
-	color: #6666cc;
-	font-size:small;
+ .newsdate {
+     font-style: italic;
+     color: #6666cc;
+     font-size:small;
 }
 
-pre,code {
-	font-family: "ubuntu mono", "9x15", "andale mono", "monotype.com", "courier new", monospace;
-}
+    pre, code
+     {
+         font-family :
+           "ubuntu mono", "9x15", "andale mono", "monotype.com", "courier new", monospace;
+     }
 
 
 /*  Headings  */
-h1 {
-	font-family: "minion web",arial,helvetica,sans-serif;
-	font-size: 300% !Important;
-	font-weight: bold;
-
-}
+     h1 {
+         font-family: "minion web",arial,helvetica,sans-serif;
+         font-size: 210% !Important;
+         font-weight: bold;
+         color : #395523 !important;
+     }
 
 .txth1 {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 170% !Important;
-        max-width: 30%;
-	font-weight: normal;
-        background-color : #022600 !Important;
-	color: #09AB00 !Important;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 170% !Important;
+    max-width: 30%;
+    font-weight: normal;
+    background-color : #022600 !Important;
+    color: #09AB00 !Important;
 }
 
 h2 {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 100%;
-	font-weight: bold;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 100%;
+    font-weight: bold;
 }
 
 .txth2 {
-        background-color : #022600 !Important;
-	color: #09AB00 !Important;
-	font-size: 150%;
-	font-weight: bold;
+    background-color : #022600 !Important;
+    color: #09AB00 !Important;
+    font-size: 150%;
+    font-weight: bold;
 }
 
 h3 {
-	font-family: arial,helvetica,sans-serif;
-	font-size: small;
-	font-weight: bold;
+    font-family: arial,helvetica,sans-serif;
+    font-size: small;
+    font-weight: bold;
 }
 
 .txth3 {
-        background-color : #022600 !Important;
-	color: #09AB00 !Important;
-	font-size: small;
-	font-weight: bold;
+    background-color : #022600 !Important;
+    color: #09AB00 !Important;
+    font-size: small;
+    font-weight: bold;
 }
 /*  end Headings  */
 
 
 small {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 75%;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 75%;
 }
 
 a.small {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 75%;
-	text-decoration: none;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 75%;
+    text-decoration: none;
 }
 
 .style1 {
-	color: #666666
+    color: #666666
 }
 
 input {
-	font-family: arial,helvetica,sans-serif;
+    font-family: arial,helvetica,sans-serif;
 }
 
 textarea {
@@ -184,42 +182,42 @@ textarea {
 }
 
 .prompt {
-	font-family: arial,helvetica,sans-serif;
-	font-weight: bold;
+    font-family: arial,helvetica,sans-serif;
+    font-weight: bold;
 }
 
 .errortext {
-	font-family: arial,helvetica,sans-serif;
-	color: #cc0000
+    font-family: arial,helvetica,sans-serif;
+    color: #cc0000
 }
 
 .errorheader
- {
-	font-family: arial,helvetica,sans-serif;
-	color: #cc0000;
-	font-size: medium;
+{
+    font-family: arial,helvetica,sans-serif;
+    color: #cc0000;
+    font-size: medium;
  }
 
-table[width="100%"][cellspacing="2"][cellpadding="4"][border="0"]
-{
-      background-color : #080213;
+ table[width="100%"][cellspacing="2"][cellpadding="4"][border="0"]
+ {
+     background-color : #080213;
 }
 
 .tableheader {
-	font-family: arial,helvetica,sans-serif;
-	font-weight: bold;
-	background-color: #1C072E;
-        border: thin solid #aaaaaa;
+    font-family: arial,helvetica,sans-serif;
+    font-weight: bold;
+    background-color: #1C072E;
+    border: thin solid #aaaaaa;
 }
 
 .rowodd {
-	font-family: arial,helvetica,sans-serif;
-	background-color: #F0F0DD;
+    font-family: arial,helvetica,sans-serif;
+    background-color: #F0F0DD;
 }
 
 .roweven {
-	font-family: arial,helvetica,sans-serif;
-	background-color: #CCCC99;
+    font-family: arial,helvetica,sans-serif;
+    background-color: #CCCC99;
 }
 
    tr.tableheader th , tr.tableheader th a
@@ -243,32 +241,6 @@ table[width="100%"][cellspacing="2"][cellpadding="4"][border="0"]
         color : #3FA300 !Important;
         
    }
-
-   table[cellspacing="0"][cellpadding="0"][border="0"] > tbody tr:nth-child(0n+8) td br
-     { line-height  : 0px !important; }
-   table[cellspacing="0"][cellpadding="0"][border="0"] > tbody > tr:nth-child(0n+8) td
-     {
-        white-space : pre-wrap !important;
-        
-         background : #161A07  !Important;
-              color : #97BF97  !Important;
-         font-size  : smaller  !Important;
-       font-family  : "envy code R", "consolas", "inconsolata", monospaced !important;
-            padding : 0.4ex 0ex 0.2ex 0.4ex !important;
-     }
-
-
-   p table[border="0"][cellpadding="4"][cellspacing="2"]
-     {  /* width="100%"> */
-         width : 100% !important;
-     }
-     
-   p table[border="0"][cellpadding="4"][cellspacing="2"]>tbody tr td:last-of-type
-     {
-         font-family : "minion web pro", ubuntu, sans-serif !important;
-           font-size : small !important;
-     }
-
 
 
 /* This is the vim.org "sidebar" navigation box. */
@@ -308,7 +280,45 @@ table[width="100%"][cellspacing="2"][cellpadding="4"][border="0"]
     {
          width : 100% !important;
     }
-}
+
+} /* EXIT -moz-document !!!  */
+
+
+@-moz-document url-prefix("http://www.vim.org/scripts/"),
+              url-prefix("http://vim.sourceforge.net/scripts/"),
+              url-prefix("http://vim.sf.net/scripts/")
+{
+
+    body >table:first-child
+      {
+            display: none !Important;
+      }
+
+   table[cellspacing="0"][cellpadding="0"][border="0"] > tbody tr:nth-child(0n+8) td br
+     { line-height  : 0px !important; }
+   table[cellspacing="0"][cellpadding="0"][border="0"] > tbody > tr:nth-child(0n+8) td
+     {
+        white-space : pre-wrap !important;    
+         background : #161A07  !Important;
+              color : #97BF97  !Important;
+         font-size  : smaller  !Important;
+       font-family  : "envy code R", "consolas", "inconsolata", monospaced !important;
+            padding : 0.4ex 0ex 0.2ex 0.4ex !important;
+     }
+
+
+   p table[border="0"][cellpadding="4"][cellspacing="2"]
+     {  /* width="100%"> */
+         width : 100% !important;
+     }
+     
+   p table[border="0"][cellpadding="4"][cellspacing="2"]>tbody tr td:last-of-type
+     {
+         font-family : "minion web pro", ubuntu, sans-serif !important;
+           font-size : small !important;
+     }
+} /* EXIT -moz-document !!!  */
+
 /*
 License: this code may be used only under the terms of the null-warranty
   expressed below, and it may be copied and modified and redistributed only
@@ -325,3 +335,4 @@ License: this code may be used only under the terms of the null-warranty
     SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
     NECESSARY SERVICING, REPAIR OR CORRECTION.
  */
+
