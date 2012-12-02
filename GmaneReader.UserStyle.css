@@ -1,0 +1,241 @@
+﻿@namespace url(http://www.w3.org/1999/xhtml);
+/*
+* Last modified: 2012-12-02T07:14:24 UTC-05:00
+* DocumentName: GmaneReader.UserStyle.css
+* DocumentType: text/css
+* CSSLevelReq: CSS Level 3 + (selectors)
+* StylishName: "gmane.org archives altered for failing vision of older people."
+* DirectPurpose: restyle the presentational characteristic (for
+* screen media) of documents viewed in Firefox (and related
+* browsers) under URIs at {blog|comments|permalink|article|thread}.gmane.org
+* AuthorAndCopyrightHolder: Sören Andersen
+* Email: somian08 gmail com
+* HomePage: https://github.com/somian/FFx-userstyles (GitHub repository)
+* SrcKitArchive: https://github.com/somian/FFx-userstyles/zipball/master
+* LicenseAndWarrantyDisclaimer: see bottom of document.
+*/
+
+
+@-moz-document domain("permalink.gmane.org"),
+               domain("article.gmane.org")
+{
+   div.blogbody { 
+         margin-left : -2.9em  !important;
+   }
+}
+
+@-moz-document domain("thread.gmane.org") /* not working yet */
+{
+    body.article pre {
+            font-size : medium !important;
+          font-family : "inconsolata","anonymous pro","everson mono",
+                        "Droid Sans Mono", "Liberation Mono", "Ubuntu Mono",
+                        monospace !important;
+   }
+}
+
+
+@-moz-document domain("permalink.gmane.org"),
+               domain("article.gmane.org"),
+               domain("comments.gmane.org")
+{
+
+   img[border="0"] {
+             margin-right : 20px  !Important;
+   }
+
+ /* this is complex */
+   div.face + pre,
+   div.face + H3 + pre,
+    td.bodytd { 
+                 border-color : rgb(24,98,255);
+                        border: thin solid;
+             background-color : rgb(212,245,248)  !important;
+                    overflow  : auto !important;
+   }
+
+   div.face + H3 + p > div > div,
+   div.headers + pre,
+   div.headers + H3 + pre,
+    td.bodytd , div.blogbody {
+            font-size : 16px   !important;
+          font-family :
+           "anonymous pro"   ,  "Droid Sans Mono",
+           "Liberation Mono" ,  "Ubuntu Mono",
+           "inconsolata"     ,  "everson mono",
+                         monospace !important;
+         padding-left : 0.2ex  !important;
+   }
+ /* work with above to snatch a little more space for the main article area */
+ /* NOTA BENE: permalink.gmane.org and blog.gmane.org use DIV-based layout, while
+                 article.gmane.org uses TABLE-based.  */
+   body.IMAGINARY {
+            margin-right : -1.6ex   !important;
+   }
+   body > div#content > div.blog {
+          padding-right : 0px  !important;
+   }
+
+   body > div#content > div.blog .blogbody pre {
+         padding : 20px 0px 20px 6px;
+   }
+ /* body.main is (currently) found on article.gmane.org */
+   body.main > table > tr:after,
+   div#banner:after {
+     display : inline-block  !important;
+     content :
+     '\00000a ATTENTION Stylish user:\00000a PLEASE USE THE REPLACEMENT STYLE “GmaneReader” INSTEAD\00000a'  !important;
+   }
+   body.main {
+            margin-right : -3.7ex  !important;
+   }
+   body.main table,
+   body.main table td {
+            margin-right : -1.6ex   !important;
+                 padding : 4px  !important;
+   }
+   body.main td.listid {
+               max-width : 35px !important;
+   }
+   body.main td.bodytd {
+           padding-right : 2px  !important;
+            padding-left : 2px  !important;
+   }
+
+ td.bodytd a,
+  .blogbody a {
+         font-family : "envy code r", monospace   !important;
+         font-size   : 13px     !important;
+        white-space  : pre-wrap !important; 
+            color    : #5CADFF  !important;
+      /*   background-color : yellow   !important; */
+   }
+   div.posted form   {
+         font-family : "inconsolata","everson mono"    !important;
+            color    : #CC9933  !important;
+   }
+   div.posted form a {
+         font-family : "inconsolata","everson mono"    !important;
+            color    : #993300  !important;
+   }
+
+   div.face + H3 + p > div > div,
+   div.blogbody > p,
+   div.face + H3,
+    td.bodytd,
+   div.blogbody {
+            background-color : rgb(24,01,11) !important;
+                       color : rgb(129,117,250)  !important;
+          /*    margin-right : 0.0ex !important; */
+   }
+
+   h3 + div > p pre, /* overide the above for noise in boilerplate */
+   div.blogbody > pre + pre,
+   div.blogbody > pre + pre > a
+                {
+              background-color: rgb(255,255,255) !important;
+                         color: rgb(255,255,255)  !important;
+                display : none !important;
+   }
+
+   div.blogbody .tosig, div.blogbody .signature {
+              background-color: rgb(0,0,0) !important;
+                         color: rgb(8,4,12)  !important;
+   }
+   div.blogbody .tosig > a, div.blogbody .signature >a {
+                         color: #143D66  !important;
+   }
+
+   div.face + H3.title,
+   div.face + H2.title  {
+               color : white   !important;
+         font-family :
+          "Palatino Linotype", "Book Antiqua", Palatino, serif  !important; 
+          font-size  : x-large       !important;
+         white-space : pre-line      !important;
+       margin-bottom : 0ex          !important;
+         padding-top : 0.7em !important;
+   }
+} /* EXIT -moz-document */
+
+@-moz-document domain("blog.gmane.org")
+{
+   body {
+       background-color : #85855C !important;
+   }
+
+   div#sidebox {
+       padding-right : 0px  !important;
+        margin-right : 0px  !important;
+   }
+   #sidebox, div#sidebox * {
+       background-color : #85855C  !important;
+   }
+   div.blog { 
+    background-color : rgb(24,01,11) !important;
+         margin-left : -2.6em   !important;
+        margin-right : 0em    !important;
+      padding-right  : 0em    !important;
+        padding-left : 0.1em  !important;
+   }
+
+   div.blog > div.entry {
+          overflow  : auto     !important;
+            margin  : 0px 4px 3ex 0px     !important;
+   }
+
+   div.blog > div.entry > div.date,
+   div.blog > div.entry > div.date * {
+    background-color : rgb(24, 1, 24)     !important;
+               color : rgb(91, 155, 147)  !important;
+   }
+   div.blog > div.entry > div.blogbody {
+    background-color : rgb(24,01,11) !important;
+               color : rgb(64, 150, 126)  !important;
+         border  : thin #FF0000 !important;
+        padding-left : 2.2ex    !important;
+          text-align : justify  !important;
+        margin-top : 0px !important;
+   }
+
+   div.blog > div.entry > div.blogbody > h3.title {
+       vertical-align: baseline !important;
+        white-space  : pre-line !important;
+               color : rgb(91, 155, 147)  !important;
+         font-family :
+          "Palatino Linotype", "Book Antiqua", Palatino, serif  !important; 
+          font-size  : x-large       !important;
+          margin-top : 0.3ex         !important;
+   }
+
+   div.blog > div.entry > div.blogbody > pre {
+         margin-left : -3.1em   !important;
+        margin-right : 0px      !important;
+       padding-right : 1px      !important;
+         padding-top : 3ex      !important;
+           font-size : 12pt     !important;
+         font-family :
+           "anonymous pro"   ,  "Droid Sans Mono",
+           "Liberation Mono" ,  "Ubuntu Mono",
+           "inconsolata"     ,  "everson mono",
+                         monospace !important;
+   }
+
+}
+/*
+License: this code may be used only under the terms of the null-warranty
+expressed below, and it may be copied and modified and redistributed only
+under the terms of the Artistic License or the Gnu General Public License
+(GPL v.3 or better), as per your choice.
+
+THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE
+COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS”
+WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE
+RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.
+SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
+NECESSARY SERVICING, REPAIR OR CORRECTION.
+*/
+
