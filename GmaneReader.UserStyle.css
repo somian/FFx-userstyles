@@ -1,10 +1,11 @@
 ﻿@namespace url(http://www.w3.org/1999/xhtml);
 /*
-* Last modified: 2012-12-02T07:14:24 UTC-05:00
+* Last modified: 2012-12-04T03:56:57 UTC+00:00
 * DocumentName: GmaneReader.UserStyle.css
 * DocumentType: text/css
 * CSSLevelReq: CSS Level 3 + (selectors)
-* StylishName: "gmane.org archives altered for failing vision of older people."
+* StylishName: GmaneReader
+* Description: "gmane.org archives altered for failing vision of older people."
 * DirectPurpose: restyle the presentational characteristic (for
 * screen media) of documents viewed in Firefox (and related
 * browsers) under URIs at {blog|comments|permalink|article|thread}.gmane.org
@@ -37,6 +38,7 @@
 
 @-moz-document domain("permalink.gmane.org"),
                domain("article.gmane.org"),
+               domain("blog.gmane.org"),
                domain("comments.gmane.org")
 {
 
@@ -46,7 +48,7 @@
 
  /* this is complex */
    div.face + pre,
-   div.face + H3 + pre,
+   div.face + h3 + pre,
     td.bodytd { 
                  border-color : rgb(24,98,255);
                         border: thin solid;
@@ -67,18 +69,19 @@
          padding-left : 0.2ex  !important;
    }
  /* work with above to snatch a little more space for the main article area */
- /* NOTA BENE: permalink.gmane.org and blog.gmane.org use DIV-based layout, while
-                 article.gmane.org uses TABLE-based.  */
-   body.IMAGINARY {
-            margin-right : -1.6ex   !important;
-   }
+ /* NOTA BENE: permalink.gmane.org, comments.gmane.org, and blog.gmane.org
+    use DIV-based layout, while article.gmane.org uses TABLE-based.  */
+
    body > div#content > div.blog {
           padding-right : 0px  !important;
    }
 
+   div.blog > div.posting > div.entry * pre,
    body > div#content > div.blog .blogbody pre {
-         padding : 20px 0px 20px 6px;
+                padding : 20px 0px 20px 6px;
+           white-space  : pre-wrap !important; 
    }
+
  /* body.main is (currently) found on article.gmane.org */
    body.main > table > tr:after,
    div#banner:after {
@@ -119,9 +122,9 @@
             color    : #993300  !important;
    }
 
-   div.face + H3 + p > div > div,
+   div.face + h3 + p > div > div,
    div.blogbody > p,
-   div.face + H3,
+   div.face + h3,
     td.bodytd,
    div.blogbody {
             background-color : rgb(24,01,11) !important;
@@ -158,63 +161,116 @@
    }
 } /* EXIT -moz-document */
 
-@-moz-document domain("blog.gmane.org")
+@-moz-document domain("blog.gmane.org"),
+               domain("comments.gmane.org")
+	/* comments.gmane.org seems a bit impossible to fix up; because the
+       indentation level on the articles increments */
+
 {
    body {
-       background-color : #85855C !important;
+    background-color : #85855C !important;
    }
 
    div#sidebox {
-       padding-right : 0px  !important;
-        margin-right : 0px  !important;
+       padding-right : 0px   !important;
+        margin-right : 0px   !important;
+       padding-left  : 0.2ex !important;
    }
-   #sidebox, div#sidebox * {
-       background-color : #85855C  !important;
-   }
-   div.blog { 
-    background-color : rgb(24,01,11) !important;
-         margin-left : -2.6em   !important;
-        margin-right : 0em    !important;
-      padding-right  : 0em    !important;
-        padding-left : 0.1em  !important;
+   #sidebox, #sidebox * {
+    background-color : #85855C  !important;
    }
 
-   div.blog > div.entry {
-          overflow  : auto     !important;
+   div.side , div.side  table {
+       padding-left  : 0.2ex !important;
+    background-color :  rgb(122, 122, 85) !important;
+   }
+   div.sidetitle {
+       width : 110px !important;
+   }
+   div.sidetitle + div.side table .cont,
+   div.sidetitle + div.side table .noplot {
+    background-color :  rgb(122, 122, 85) !important;
+   }
+
+   div.sidetitle + div.side table .plot {
+              color  : Black !important;
+   }
+   div.calendar * {
+           font-size : xx-small  !important;
+    background-color :  rgb(122, 122, 85) !important;
+   }
+
+   table.months  tbody tr th {
+          visibility : hidden !important;
+    background-color :  rgb(122, 122, 85) !important;
+   }
+   table.months  tbody tr td {
+    background-color :  rgb(122, 122, 85) !important;
+             padding : 2px 0px 1px 2px !important;
+   }
+
+  /* Archives */
+   table.months * tr,
+   table.months * div,
+   #sidebar div.side:nth-of-type(0n+5)  {
+           font-size : xx-small  !important;
+   }
+
+   div.blog {
+   background-color : rgb(24,01,11) !important;
+        margin-left : -2.6em   !important;
+       margin-right : 0em    !important;
+     padding-right  : 0em    !important;
+       padding-left : 0.1em  !important;
+   }
+   div.posting * div.posting { 
+        margin-left : 0em   !important;
+   }
+
+   div.blog > div.entry,
+   div.blog > div.posting * div.entry {
+   background-color : rgb(24, 1, 24)      !important;
+          overflow  : auto                !important;
             margin  : 0px 4px 3ex 0px     !important;
    }
 
    div.blog > div.entry > div.date,
+   div.blog > div.posting * div.entry > div.date, 
    div.blog > div.entry > div.date * {
-    background-color : rgb(24, 1, 24)     !important;
-               color : rgb(91, 155, 147)  !important;
+   background-color : rgb(24, 1, 24)     !important;
+              color : rgb(91, 155, 147)  !important;
    }
-   div.blog > div.entry > div.blogbody {
-    background-color : rgb(24,01,11) !important;
-               color : rgb(64, 150, 126)  !important;
-         border  : thin #FF0000 !important;
-        padding-left : 2.2ex    !important;
-          text-align : justify  !important;
-        margin-top : 0px !important;
+   div.blog > div.entry > div.blogbody,
+   div.blog > div.posting > * div.entry  {
+   background-color : rgb(24, 1, 24)     !important;
+              color : rgb(64, 150, 126)  !important;
+       padding-left : 2.2ex    !important;
+         text-align : justify  !important;
+         margin-top : 0px !important;
    }
 
-   div.blog > div.entry > div.blogbody > h3.title {
-       vertical-align: baseline !important;
-        white-space  : pre-line !important;
-               color : rgb(91, 155, 147)  !important;
-         font-family :
+   h3.title, h2.title {
+     vertical-align : baseline !important;
+       white-space  : pre-line !important;
+              color : rgb(91, 155, 147)  !important;
+        font-family :
           "Palatino Linotype", "Book Antiqua", Palatino, serif  !important; 
-          font-size  : x-large       !important;
-          margin-top : 0.3ex         !important;
+         font-size  : x-large       !important;
+         margin-top : 0.3ex         !important;
    }
 
-   div.blog > div.entry > div.blogbody > pre {
-         margin-left : -3.1em   !important;
-        margin-right : 0px      !important;
-       padding-right : 1px      !important;
-         padding-top : 3ex      !important;
-           font-size : 12pt     !important;
-         font-family :
+   div.blog > div.entry > div.blogbody > pre,
+   div.blog > div.posting > div.entry * pre,
+   div.blog > div.posting  *  div.entry pre {
+   background-color : rgb(24,01,11) !important;
+        margin-left : -3.1em   !important;
+       margin-right : 0px      !important;
+      padding-right : 1px      !important;
+        padding-top : 3ex      !important;
+       white-space  : pre-wrap !important; 
+          overflow  : auto !important;
+          font-size : 10pt     !important;
+        font-family :
            "anonymous pro"   ,  "Droid Sans Mono",
            "Liberation Mono" ,  "Ubuntu Mono",
            "inconsolata"     ,  "everson mono",
